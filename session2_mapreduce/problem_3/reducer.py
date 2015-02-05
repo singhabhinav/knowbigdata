@@ -15,7 +15,7 @@ def main(separator='\t'):
     for current_word, group in groupby(data, itemgetter(0)):
             anagram_list = list(set(anagram for current_word, anagram in group))
             if len(anagram_list) > 1:
-                print "%s" % (anagram_list)
+                print "%s%s%s" % (current_word, separator, anagram_list)
 
 
 if __name__ == "__main__":
