@@ -10,8 +10,8 @@ def read_input(file):
 
 def main(separator='\t'):
     data = read_input(sys.stdin)
-    for user, dna in data:
-        print '%s%s%s' % (min(dna[::-1], dna), separator, user)
+    for voter, votee in data:
+        print '%s%s%s' % (voter, separator, votee)
 
 if __name__ == "__main__":
     main()
