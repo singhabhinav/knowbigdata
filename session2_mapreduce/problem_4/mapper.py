@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+'''
+Find all people having same or mirror image of DNAs
+'''
+
 import sys
 
 

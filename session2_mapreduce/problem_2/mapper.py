@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+'''
+Find anagrams in a text file
+'''
+
 import sys
 
 

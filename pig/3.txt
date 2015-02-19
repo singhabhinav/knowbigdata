@@ -1,0 +1,49 @@
+//MapReduce program that computes the natural join between the two datasets based on user_login
+
+Map reduce phase 1 -
+
+def map(tweets.csv):
+    foreach (line in tweets.csv):
+        key = user_login
+        value = tweet_id, tweeted_msg
+
+def reduce():
+    print user_login, tweet_id, tweeted_msg
+
+
+first map reduce phase will generate a tweets.csv file with values in this order (user_login, tweet_id, tweeted_msg)
+
+Map reduce phase 2 - 
+   We will pass both users.csv and tweets.csv to map function
+
+   users.csv 
+   user_login, user_name, state
+   abc, Abhinav, KA
+   san, Sandeep, UP
+
+
+   tweets.csv
+   user_login, tweet_id, tweet_msg
+   abc, 123, tweet
+   abc, 456, welcome
+   san, 789, test
+
+
+   Map phase - 
+
+      key = abc, value = (User, abc, Abhinav, KA)
+      key = san, value = (User, san, Sandeep, UP)
+      key = abc, value = (Tweet, 123, tweet, abc)
+      key = abc, value = (Tweet, 456, welcome, abc)
+      key = san, value = (Tweet, 789, test, san)
+
+   Shuffle phase - 
+
+      key = abc, values=[(User, abc, Abhinav, KA), (Tweet, 123, tweet, abc), (Tweet, 456, welcome, abc)]
+      key = san, values=[(User, san, Sandeep, UP), (Tweet, 789, test, san)]
+
+    
+    Reducer phase -
+        (abc, Abhinav, KA, 123, tweet, abc)
+        (abc, Abhinav, KA, 456, welcome, abc)
+        (san, Sandeep, UP, 789, test, san)

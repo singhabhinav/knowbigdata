@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+'''
+Find people having same sequence of DNA
+'''
+
 import sys
 
 

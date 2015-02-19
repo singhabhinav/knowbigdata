@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+'''
+ Count the frequencies of letters
+'''
+
 import sys
 import re
 from collections import defaultdict
